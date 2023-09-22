@@ -1,0 +1,107 @@
+import time
+import os
+from pynput.keyboard import Controller,Key
+def doasper(a):
+    if a == 'Y' or a== 'y':
+        os.system("scrnsave.scr/s")
+keyboard=Controller()
+def type(a):
+    for i in a:
+        keyboard.press(i)
+        keyboard.release(i)
+    time.sleep(2)
+source=input('Enter the drive letter of the source : ')
+print ('='*30,'\nNote: After pressing enter select \"windows.desktop\" \n','='*30)
+ask = input ('Do you want to turn off the screen during setup (Y/N)')
+doasper(ask)
+time.sleep(3)
+keyboard.press(Key.ctrl)
+keyboard.press('c')
+keyboard.release('c')
+keyboard.release(Key.ctrl)
+keyboard.press(Key.alt)
+keyboard.press(Key.f4)
+keyboard.release(Key.f4)
+keyboard.release(Key.alt)
+
+os.system('start shell:startup')
+time.sleep(2)
+keyboard.press(Key.ctrl)
+keyboard.press('v')
+keyboard.release(Key.ctrl)
+keyboard.release('v')
+time.sleep(2)
+
+
+
+os.system('start d:')
+time.sleep(2)
+keyboard.press(Key.menu)
+keyboard.release(Key.menu)
+for i in range(2):
+    keyboard.press(Key.up)
+    keyboard.release(Key.up)
+keyboard.press(Key.right)
+keyboard.release(Key.right)
+keyboard.press(Key.enter)
+keyboard.release(Key.enter)
+type('Program_Files')
+keyboard.press(Key.enter)
+keyboard.release(Key.enter)
+keyboard.press(Key.enter)
+keyboard.release(Key.enter)
+time.sleep(2)
+keyboard.press(Key.ctrl)
+keyboard.press('v')
+keyboard.release('v')
+keyboard.release(Key.ctrl)
+time.sleep(2)
+keyboard.press(Key.alt)
+keyboard.press(Key.tab)
+keyboard.release(Key.tab)
+keyboard.release(Key.alt)
+keyboard.press(Key.alt)
+keyboard.press(Key.f4)
+keyboard.release(Key.f4)
+keyboard.release(Key.alt)
+############# txt source
+os.system('start D:\Program_Files\\')
+time.sleep(2)
+keyboard.press(Key.menu)
+keyboard.release(Key.menu)
+for i in range(2):
+    keyboard.press(Key.up)
+    keyboard.release(Key.up)
+keyboard.press(Key.right)
+keyboard.release(Key.right)
+keyboard.press(Key.enter)
+keyboard.release(Key.enter)
+time.sleep(1)
+type('system')
+keyboard.press(Key.enter)
+keyboard.release(Key.enter)
+
+ 
+##########
+c='start '+source+':'
+os.system(c)
+time.sleep(2)
+keyboard.press('w')
+keyboard.release('w')
+keyboard.press('w')
+keyboard.release('w')
+time.sleep(2)
+keyboard.press(Key.ctrl)
+keyboard.press('c')
+keyboard.release('c')
+keyboard.release(Key.ctrl)
+os.system('start D:/Program_Files/')
+time.sleep(2)
+keyboard.press(Key.ctrl)
+keyboard.press('v')
+keyboard.release('v')
+keyboard.release(Key.ctrl)
+time.sleep(2)
+os.system("shutdown -s -t 120")
+
+
